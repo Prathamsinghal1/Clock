@@ -25,6 +25,9 @@
         if(hour>12){
             day_night = 'PM'
             hour=hour-12;
+            if(hour<10){
+                hour = '0' + hour
+            }
         }
         if(seconds<10){
             seconds = '0' + seconds
