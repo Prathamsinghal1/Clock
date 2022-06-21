@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="first">
+        <div class="second">
+            <div id="sp"></div>
+        </div>
+    </div>
+    
+</body>
+<script>
+    setInterval(()=>{
+        d=new Date; 
+        let hour = d.getHours();
+        let minutes = d.getMinutes();
+        let seconds = d.getSeconds();
+        let day_night = 'AM'
+        if(hour>12){
+            day_night = 'PM'
+            hour=hour-12;
+        }
+        if(seconds<10){
+            seconds = '0' + seconds
+        }
+        time = hour + ':' + minutes + ':' + seconds + ' ' + day_night;
+        document.getElementById('sp').innerHTML= time;
+    },1000);
+</script>
+</html>
