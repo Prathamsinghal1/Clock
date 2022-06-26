@@ -22,15 +22,15 @@
         let minutes = d.getMinutes();
         let seconds = d.getSeconds();
         let day_night = 'AM'
-        if(hour>12){
+        if(hour>=12){
             day_night = 'PM'
             hour=hour-12;
-            if(hour<=9){
-                hour = '0' + hour
-            }
+        }
+        if(hour<10){
+                hour = '0' + hour;
         }
         if(seconds<10){
-            seconds = '0' + seconds
+            seconds = '0' + seconds;
         }
         time = hour + ':' + minutes + ':' + seconds + ' ' + day_night;
         document.getElementById('sp').innerHTML= time;
